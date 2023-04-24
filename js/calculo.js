@@ -13,6 +13,7 @@ class Calculator {
 
     addDigit(digit) {
         console.log(digit);
+        this.currentOperation = digit
     }
 }
 
@@ -21,14 +22,7 @@ const calc = new Calculator(previousOperationText,currentOperationText)
 // eventos
 buttons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-        const value = e.target.innerTEXT;
-
+        const value = e.target.innerHTML;
         console.log(value);
-
-        if(+value >= 0 || value === "."){
-            calc.addDigit(value);
-        } else {
-            console.log('op:' + value);
-        }
-    });
+    })
 })
