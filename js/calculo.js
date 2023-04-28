@@ -1,81 +1,64 @@
-// seleção dos eventos
-const previousOperationText = document.querySelector("#previous-operation");
-const currentOperationText = document.querySelector("#current-operation");
-const buttons = document.querySelectorAll("#button-container button");
+function soma(a,b){
+    return a + b
+};
+function subt(a,b){
+    return a - b
+};
+function mult(a,b){
+    return a * b
+};
+function div(a,b){
+    return a / b
+};
+function fator(n){
+    if(n === 0 || n === 1){
+        return 1
+    }else{
+        return n * fator(n-1)
+    
+}
+function raiz(n){
+    return Math.sqrt(n);
+}
 
+function potenc(a, b){
+    return Math.pow(a, b)
+}
 
-class Calculator {
-    constructor(previousOperationText, currentOperationText){
-        this.previousOperationText = previousOperationText;
-        this.currentOperationText = currentOperationText
-        this.currentOperation = ""
-    }
+function imp(num){
+    if(num % 2 !== 0){
+    resultadoP.innerTEXT = "Não";
+    console.log(`${num} é Impar`);
+    }else{
+    resultadoImp.innerText = "Sim";
+    console.log((`${num} é Par`));
+}}
 
-    addDigit(digit) {
-        if(digit === "." && this.currentOperationText.innerHTML.includes(".")){
-            return;
-        }
-
-        this.currentOperation = digit
-        this.updateScreen()
-    }
-
-processOperation(operation){
-    let operationValue
-    const previous = +this.previousOperationText.innerHTML;
-    const current = +this.currentOperationText.innerHTML;
-
-    switch (operation) {
-        case "+":
-            operationValue = previous + current
-            this.updateScreen(operationValue, operation, current, previous)
-            break;
-        default:
-            return;
+function par(num){
+    if(num % 2 === 0){
+    resultadoP.innerTEXT = "Não";
+    console.log(`${num} é Par`);
+    }else{
+    resultadoImp.innerText = "Sim";
+    console.log(`${num} é Impar`);
     }
 }
 
-    updateScreen(
-        operationValue = null,
-        operation = null,
-        current = null,
-        previous = null
-         )
-         {
-            if(operationValue === null){
-                this.currentOperationText.innerHTML += this.currentOperation;
-            } else {
-                if(previous === 0){
-                    operationValue = current
-                }
-
-                this.previousOperationText.innerHTML = `${operationValue} ${operation}`
-                this.currentOperationText.innerHTML = "";
-            }
-
-
-
-            console.log(operationValue,operation,current,previous);
-
-            this.currentOperationText.innerHTML += this.currentOperation;
-            
+function primo(num){
+    if(num <= 1){
+        console.log(`${num} Não é Primo`);
+        resultadoPrimo.innerText = "Não";
+        return false
     }
-}
-
-
-const calc = new Calculator(previousOperationText,currentOperationText)
-
-// eventos
-buttons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        const value = e.target.innerHTML;
-        
-
-        if(+value >= 0 || value === "."){
-            calc.addDigit(value)
-        } else {
-            calc.processOperation(value);
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+          console.log(`${num} NÃO é primo`);
+          resultPrimo.innerText = "Não";
+          return false;
         }
-
-    })
-})
+      }
+      console.log(`${num} é primo`);
+      resultPrimo.innerText = "Sim";
+      return true;
+  }
+}
