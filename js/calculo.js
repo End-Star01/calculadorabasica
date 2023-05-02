@@ -22,14 +22,37 @@ class Calculator {
 
 processOperation(operation){
     let operationValue
-    const previous = +this.previousOperationText.innerHTML;
+    const previous = +this.previousOperationText.innerHTML.split(" ")[0];
     const current = +this.currentOperationText.innerHTML;
 
     switch (operation) {
         case "+":
             operationValue = previous + current
-            this.updateScreen(operationValue, operation, current, previous)
+            this.updateScreen(operationValue, operation, current, previous);
             break;
+            case "-":
+            operationValue = previous + current
+            this.updateScreen(operationValue, operation, current, previous);
+        default:
+            break;
+            case "/":
+            operationValue = previous + current
+            this.updateScreen(operationValue, operation, current, previous);
+        default:
+            break;
+            case "*":
+            operationValue = previous + current
+            this.updateScreen(operationValue, operation, current, previous);
+        default:
+            return;
+            case "!":
+            operationValue = previous + current
+            this.updateScreen(operationValue, operation, current, previous);
+        default:
+            return;
+            case "-":
+            operationValue = previous + current
+            this.updateScreen(operationValue, operation, current, previous);
         default:
             return;
     }
