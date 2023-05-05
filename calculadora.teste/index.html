@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        
+
+<title>AV Calc</title>
+</head>
+<body>
+    <div id="divg">
+    <div class="numbers">
+    <div> <label for="num1" required>Numero 1: </label> 
+        <input type="number" name="num1" id="inum1"></div>
+        
+    <div> <label for="num2" required>Numero 2:</label>
+            <input type="number" name="num2" id="inum2"></div>
+    
+    </div>
+
+   <select name="funct" id="ifunct">
+
+    <option value="#" selected>Escolha</option>
+    <optgroup label="Funções">
+        <option value="+" id="somar">Somar</option>
+        <option value="-" id="subtrair">Subtrair</option>
+        <option value="/" id="dividir">Dividir</option>
+        <option value="*" id="multiplicar">Multiplicar</option>
+        <option value="!" id="exponencial">Exponencial</option>
+        <option value="f" id="fatoracao">Fatoração</option>
+        <option value="v" id="raiz">Raiz</option>
+        <option value="primo" id="primo">Primo</option>
+        <option value="pimp" id="pimp">Par/Impar</option>
+    </optgroup>
+   </select>
+<div> <button onclick="resultado()" class="resultado" id="resultado">Resultado</button></div>
+
+   <div><label for="num3">Par/Impar/Primo:</label>
+<input type="number" name="num3" id="inum3"></div>
+
+<button onclick="resultadopimp()" class="resultadopimp" id="result">Verificar</button>
+   
+
+   <h1 class="result"></h1>
+</div>
+<script src='js/calculo.js'></script>
+<script src="js/script2.js"></script>
+<script type="module" src="js/teste.js"></script>
+</body>
+</html>
