@@ -62,3 +62,5 @@ function primo(num){
       return true;
   }
 }
+
+module.exports = {soma}
