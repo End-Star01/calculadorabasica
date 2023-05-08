@@ -3,5 +3,12 @@
 }
 * {
     background-color: black;
-    color: white
+    color: white;   
+}
+
+.result{
+    display:flex;
+    align-items: center
+    justify-content: center;
+    
 }

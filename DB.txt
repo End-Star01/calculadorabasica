@@ -1,0 +1,81 @@
+CREATE TABLE livro (
+id INTEGER (3) NOT NULL,
+titulo VARCHAR (100) NOT NULL,
+autor VARCHAR (100) NOT NULL,
+categoria VARCHAR (40) NOT NULL,
+estoque INTEGER (2) NOT NULL,
+preco DECIMAL (5,2) NOT NULL
+);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (1,'O auto da compadecida','Ariano Suassuna','romance',3,14.9);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (2,'O amor se esquece de começar','Fabrício Carpinejar','romance',2,23.5);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (3,'Canalha!','Fabricio Carpinejar','romance',0,27.4);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (4,'O casamento suspeitoso','Ariano Suassuna','romance',2,21);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (5,'A pena e a Lei','Ariano Suassuna','poesia',0,12.4);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (6,'O mundo é plano','Diego Cruz','economia',2,32);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (7,'A terceira onda','Tiago Dória','sociologia',3,32.45);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (8,'A verdadeira História do Brasil','Fernando Pessoa','história',4,21.4);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (9,'A menina que roubava livros','Diego Cruz','romance',0,21.3);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (10,'O caçador de Pipas','Ivan Lins','romance',0,28);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (11,'A 2ª Guerra','Túlio Campelo','história',4,43);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (12,'Memórias','Diego Cruz','romance',21,11.5);
+
+INSERT INTO livro (id,titulo,autor,categoria,estoque,preco)
+VALUES (13,'Pai rico, Pai pobre','Arthur Lessa','economia',3,12.3);
+
+SELECT titulo FROM livro WHERE categoria='economia'AND estoque > 0 ORDER BY titulo;
+
+SELECT titulo FROM livro WHERE categoria='romance' ORDER BY preco LIMIT 5;
+
+SELECT titulo FROM livro WHERE autor='José Saramago';
+
+SELECT titulo FROM livro WHERE autor='Ariano Suassuna' AND preco<=50;
+
+SELECT preco FROM livro WHERE id=7;
+
+SELECT titulo FROM livro WHERE categoria='romance' AND autor='Fabrício Carpinejar';
+
+SELECT titulo FROM livro ORDER BY estoque DESC LIMIT 1;
+
+SELECT titulo, preco FROM livro WHERE estoque=0;
+
+SELECT titulo FROM livro WHERE categoria='economia' ORDER BY preco DESC LIMIT 1;
+
+SELECT titulo FROM livro WHERE NOT estoque=0 AND categoria='romance' ORDER BY estoque LIMIT 1;
+
+SELECT titulo FROM livro WHERE NOT estoque=0 AND preco>=20;
+
+SELECT titulo FROM livro WHERE titulo LIKE '%o %' OR titulo LIKE '%a %' OR titulo LIKE '%os %' OR titulo LIKE '%as %';
+
+SELECT titulo FROM livro WHERE categoria='romance' AND autor='Diego Cruz' ORDER BY estoque LIMIT 1;
+
+SELECT titulo FROM livro WHERE autor='Ariano Suassuna' AND estoque='0';
+
+SELECT titulo FROM livro WHERE categoria='romance' AND preco>=10 AND preco<=50 AND estoque>=2;
+
+SELECT titulo FROM livro WHERE autor LIKE '% Cruz%';
+
+SELECT titulo FROM livro WHERE titulo LIKE 'o %' OR titulo LIKE 'a %' OR titulo LIKE 'os %' OR titulo LIKE 'as %';
